@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tanish Lodekar - Developer Portfolio</title>
+    <link rel="icon" href="https://img.freepik.com/premium-vector/tl-logo-design_731343-1143.jpg" type="image/png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- highlight.js for syntax highlighting in modals -->
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="overflow-x-hidden">
+
+    <!-- Custom Cursor -->
+    <div id="cursor-dot"></div>
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-opacity-50 backdrop-blur-md border-b border-gray-800">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-white"> TanishLodekar</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#about" class="hover:text-accent transition-colors"> about</a>
+                <a href="#portfolio" class="hover:text-accent transition-colors"> portfolio</a>
+                <a href="#experience" class="hover:text-accent transition-colors"> experience</a>
+                <a href="#contact" class="hover:text-accent transition-colors"> contact</a>
+            </div>
+            <button id="mobile-menu-btn" class="md:hidden text-2xl">
+                ☰
+            </button>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-900 bg-opacity-90">
+            <a href="#about" class="block py-2 px-4 text-sm hover:bg-gray-700"> about</a>
+            <a href="#portfolio" class="block py-2 px-4 text-sm hover:bg-gray-700"> portfolio</a>
+            <a href="#experience" class="block py-2 px-4 text-sm hover:bg-gray-700"> experience</a>
+            <a href="#contact" class="block py-2 px-4 text-sm hover:bg-gray-700"> contact</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="h-screen relative overflow-hidden">
+        <!-- Canvas Background -->
+        <canvas id="hero-canvas" class="absolute top-0 left-0 w-full h-full z-0"></canvas>
+
+        <!-- Fake Terminal Card -->
+        <div class="absolute bottom-8 left-8 w-[420px] bg-[#0d1117] border border-gray-700 rounded-xl shadow-2xl z-10">
+            <!-- Fake Window Bar -->
+            <div class="flex items-center gap-2 px-3 py-2 border-b border-gray-700 bg-[#161b22] rounded-t-xl">
+                <span class="w-3 h-3 rounded-full bg-red-500"></span>
+                <span class="w-3 h-3 rounded-full bg-yellow-500"></span>
+                <span class="w-3 h-3 rounded-full bg-green-500"></span>
+                <span class="ml-4 text-gray-400 text-sm font-mono">terminal</span>
+            </div>
+
+            <!-- Terminal Content -->
+            <div class="p-4 font-mono text-green-400 text-sm leading-relaxed">
+                <p>$ Hello, I am <span class="text-accent">Tanish Lodekar</span></p>
+                <p>$ I am a <span id="typewriter"></span><span class="typewriter-cursor">|</span></p>
+                <p>$ View my work 👇</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- About Section -->
+    <section id="about" class="py-20 reveal">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12"><span class="text-accent">01.</span> About Me</h2>
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/3 flex justify-center">
+                    <div class="relative w-64 h-64">
+                        <img src="https://miro.medium.com/v2/resize:fit:1100/format:webp/1*LqClB-Wa__W9WrNqP74I3Q.jpeg" alt="Tanish Lodekar"
+                            class="rounded-full w-full h-full object-cover border-4 border-accent" id="about-img"
+                            crossorigin="anonymous">
+                        <div class="absolute inset-0 rounded-full glow opacity-75"></div>
+                    </div>
+                </div>
+                <div class="md:w-2/3">
+                    <div class="bg-[#010409] border border-gray-800 rounded-lg p-6">
+                        <div class="flex items-center mb-4">
+                            <span class="h-3 w-3 bg-red-500 rounded-full mr-2"></span>
+                            <span class="h-3 w-3 bg-yellow-500 rounded-full mr-2"></span>
+                            <span class="h-3 w-3 bg-green-500 rounded-full"></span>
+                        </div>
+                        <p class="text-secondary mb-4">> Tanish Lodekar@portfolio:~$ cat ./bio.txt</p>
+                        <p class="text-primary leading-relaxed">
+                            Hello, I am Tanish, a dedicated Full Stack Python Developer with extensive experience in designing, developing, and maintaining scalable web applications. I specialize in building robust back-end systems using Python while delivering intuitive and responsive front-end interfaces. With over 1 years of industry experience, I have successfully contributed to diverse projects, translating complex requirements into efficient, high-quality software solutions. I am committed to continuous learning and delivering technology-driven solutions that create real business value
+                        </p>
+                        <p class="text-secondary mt-4">> <span class="blinking-cursor">_</span></p>
+                    </div>
+                    <div class="mt-8">
+                        <h3 class="text-2xl font-semibold mb-4">My Skills</h3>
+                        <div class="space-y-4">
+                            <div class="skill">
+                                <p class="flex justify-between mb-1"><span>Python & </span><span>90%</span></p>
+                                <div class="w-full bg-gray-700 rounded-full h-2.5">
+                                    <div class="bg-accent h-2.5 rounded-full skill-bar-inner" style="width: 0%"
+                                        data-width="90%"></div>
+                                </div>
+                            </div>
+                            <div class="skill">
+                                <p class="flex justify-between mb-1"><span>Angular & React.js </span><span>85%</span></p>
+                                <div class="w-full bg-gray-700 rounded-full h-2.5">
+                                    <div class="bg-accent h-2.5 rounded-full skill-bar-inner" style="width: 0%"
+                                        data-width="85%"></div>
+                                </div>
+                            </div>
+                            <div class="skill">
+                                <p class="flex justify-between mb-1"><span>MongoDB</span><span>80%</span></p>
+                                <div class="w-full bg-gray-700 rounded-full h-2.5">
+                                    <div class="bg-accent h-2.5 rounded-full skill-bar-inner" style="width: 0%"
+                                        data-width="80%"></div>
+                                </div>
+                            </div>
+                            <div class="skill">
+                                <p class="flex justify-between mb-1"><span>SQL & PosgreSQL</span><span>75%</span></p>
+                                <div class="w-full bg-gray-700 rounded-full h-2.5">
+                                    <div class="bg-green h-2.5 rounded-full skill-bar-inner" style="width: 0%"
+                                        data-width="75%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 bg-[#010409] reveal">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12"><span class="text-accent">02.</span> My Portfolio</h2>
+            <div class="flex justify-center mb-8 space-x-2 md:space-x-4">
+                <button class="filter-btn" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="frontend">Frontend</button>
+                <button class="filter-btn" data-filter="backend">Backend</button>
+                <button class="filter-btn" data-filter="fullstack">Full Stack</button>
+            </div>
+            <div id="portfolio-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project cards will be injected here by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 reveal">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12"><span class="text-accent">03.</span> My Experience</h2>
+            <div class="relative max-w-3xl mx-auto">
+                <!-- Experience items will be injected here by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-[#010409] reveal">
+        <div class="container mx-auto px-6 max-w-2xl">
+            <h2 class="text-3xl font-bold text-center mb-12"><span class="text-accent">04.</span> Get In Touch</h2>
+            <div class="bg-[#161b22] border border-gray-800 rounded-lg p-8">
+                <div class="flex items-center mb-4">
+                    <span class="h-3 w-3 bg-red-500 rounded-full mr-2"></span>
+                    <span class="h-3 w-3 bg-yellow-500 rounded-full mr-2"></span>
+                    <span class="h-3 w-3 bg-green-500 rounded-full"></span>
+                </div>
+                <form>
+                    <div class="mb-4">
+                        <label for="name" class="block mb-2 text-secondary">> Name:</label>
+                        <input type="text" id="name" name="name" class="w-full p-2 rounded-md form-input">
+                    </div>
+                    <div class="mb-4">
+                        <label for="email" class="block mb-2 text-secondary">> Email:</label>
+                        <input type="email" id="email" name="email" class="w-full p-2 rounded-md form-input">
+                    </div>
+                    <div class="mb-4">
+                        <label for="message" class="block mb-2 text-secondary">> Message:</label>
+                        <textarea id="message" name="message" rows="4"
+                            class="w-full p-2 rounded-md form-input"></textarea>
+                    </div>
+                    <button type="submit" class="w-full py-2 px-4 rounded-md text-white font-bold submit-btn">
+                        SEND MESSAGE
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Modal -->
+    <div id="project-modal-overlay">
+        <div id="project-modal">
+            <div class="modal-header">
+                <div class="flex items-center">
+                    <span class="h-3 w-3 bg-red-500 rounded-full mr-2"></span>
+                    <span class="h-3 w-3 bg-yellow-500 rounded-full mr-2"></span>
+                    <span class="h-3 w-3 bg-green-500 rounded-full"></span>
+                </div>
+                <button id="modal-close-btn" class="text-2xl">×</button>
+            </div>
+            <div class="border-b border-gray-800 flex px-4">
+                <button class="modal-tab active" data-tab="description">Description.md</button>
+                <button class="modal-tab" data-tab="features">Features.js</button>
+                <button class="modal-tab" data-tab="snippet">Snippet.html</button>
+            </div>
+            <div class="modal-body">
+                <!-- Content will be injected here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-6 text-center text-secondary border-t border-gray-800">
+        <p>© 2026 Tanishlodekar. Designed & Built with </p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
